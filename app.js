@@ -42,6 +42,12 @@ app.use((req, res, next) => {
 });
 
 // Routes
+app.get('/', (req, res) => {
+  res.status(200).json({
+    message: 'Hello from the server side!',
+    app: 'Natours',
+  });
+});
 app.use('/api/v1/users', userRouter);
 
 app.use('*', (req, res, next) => {
